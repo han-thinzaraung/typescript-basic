@@ -78,7 +78,6 @@ hsla = [200, '100%', '100', 1];
 let xy;
 xy = [94.7, 20.1];
 const authorOne = { name: 'mario', avatar: '/img/mario.png' };
-;
 const newPost = {
     title: 'my first post',
     body: 'something interesting',
@@ -90,3 +89,49 @@ function createPost(post) {
     console.log(`Created post ${post.title} by ${post.author.name}`);
 }
 createPost(newPost);
+let posts = [];
+posts.push(newPost);
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return [r, g, b];
+}
+const colorOne = getRandomColor();
+const colorTwo = getRandomColor();
+console.log(colorOne, colorTwo);
+const userOne = {
+    name: 'mario',
+    score: 75
+};
+function formatUser(user) {
+    console.log(`${user.name} has a score of ${user.score}`);
+}
+formatUser(userOne);
+formatUser({ name: 'yoshi', score: 45 });
+//union types 
+let someId;
+someId = 1;
+someId = '2';
+let email = null;
+email = 'mario@gmail.com';
+email = null;
+function swapIdType(id) {
+    if (typeof id === 'string') {
+        return parseInt(id);
+    }
+    else {
+        return id.toString();
+    }
+}
+const idOne = swapIdType('1');
+const idTwo = swapIdType('2');
+console.log(idOne, idTwo);
+function logDetails(value) {
+    if (value.type === 'user') {
+        console.log(value.email, value.username);
+    }
+    if (value.type === 'person') {
+        console.log(value.firstname, value.age);
+    }
+}
