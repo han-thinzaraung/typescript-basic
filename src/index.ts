@@ -68,3 +68,21 @@ function formatGreeting(name:string, greeting:string){
     return `${greeting},${name}`;
 }
 const result = formatGreeting('Mario','hello');
+
+//any type 
+let address:any;
+
+address = 30;
+address = false;
+
+
+//any type in array
+let thing:any[] = ['hello',true,30,null]
+thing.push({id:12});
+
+//functions $ any
+function addTogether(value:any):any{
+    return value+value;
+}
+const resultOne = addTogether('hello');
+const resultTwo = addTogether(3);
