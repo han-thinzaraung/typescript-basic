@@ -154,3 +154,24 @@ function formatUser(user:User): void {
 }
 formatUser(userOne);
 formatUser({name : 'yoshi' , score : 45});
+
+//union types 
+let someId: number | string 
+someId = 1;
+someId = '2';
+
+let email:string | null = null;
+email = 'mario@gmail.com';
+email = null;
+
+type Id = number | string 
+let anotherId : Id
+anotherId = 'ddd'
+anotherId = 5
+
+function swapIdType(id : Id): Id {
+    parseInt('5');
+    return id
+}
+swapIdType('5')
+
