@@ -86,3 +86,42 @@ function addTogether(value:any):any{
 }
 const resultOne = addTogether('hello');
 const resultTwo = addTogether(3);
+
+//tuples
+let persons:[string,number,boolean] = ['mario',12,true];
+
+let hsla:[number,string,string,number];
+hsla = [200, '100%','100',1];
+
+let xy:[number,number];
+xy= [94.7,20.1];
+
+//interfaces
+interface Author {
+      name: string,
+      avatar:string
+}
+const authorOne: Author = {name: 'mario' , avatar : '/img/mario.png'};
+
+interface Post{
+    title : string,
+    body : string,
+    tags: string[],
+    created_at:Date,
+    author : Author
+}
+const newPost: Post = {
+    title: 'my first post',
+    body: 'something interesting',
+    tags: ['gaming','tech'],
+    created_at: new Date(),
+    author: authorOne
+}
+
+function createPost(post:Post) : void{
+    console.log(`Created post ${post.title} by ${post.author.name}`)
+}
+createPost(newPost);
+
+let posts: Post[] = []
+posts.push(newPost);

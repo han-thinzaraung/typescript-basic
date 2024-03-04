@@ -39,3 +39,54 @@ let user = {
 user.firstName = 'peach';
 user.id = 2;
 console.log(user);
+//functions
+function addToNumbers(a, b) {
+    return a + b;
+}
+const substractToNumbers = (a, b) => {
+    return a - b;
+};
+addToNumbers(3, 4);
+substractToNumbers(10, 2);
+function addAllNumbers(items) {
+    const total = items.reduce((a, c) => a + c, 0);
+    console.log(total);
+}
+addAllNumbers([5, 7, 11, 9, 3, 2, 1]);
+//return type inference
+function formatGreeting(name, greeting) {
+    return `${greeting},${name}`;
+}
+const result = formatGreeting('Mario', 'hello');
+//any type 
+let address;
+address = 30;
+address = false;
+//any type in array
+let thing = ['hello', true, 30, null];
+thing.push({ id: 12 });
+//functions $ any
+function addTogether(value) {
+    return value + value;
+}
+const resultOne = addTogether('hello');
+const resultTwo = addTogether(3);
+//tuples
+let persons = ['mario', 12, true];
+let hsla;
+hsla = [200, '100%', '100', 1];
+let xy;
+xy = [94.7, 20.1];
+const authorOne = { name: 'mario', avatar: '/img/mario.png' };
+;
+const newPost = {
+    title: 'my first post',
+    body: 'something interesting',
+    tags: ['gaming', 'tech'],
+    created_at: new Date(),
+    author: authorOne
+};
+function createPost(post) {
+    console.log(`Created post ${post.title} by ${post.author.name}`);
+}
+createPost(newPost);
